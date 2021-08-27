@@ -1,11 +1,11 @@
 import React from 'react'
 
-const App = () => {
+const EditTaks = () => {
     return (
         <div>
-            <h1>Holaa</h1>
+            
         </div>
     )
 }
 
-export default App
+export default EditTaks
