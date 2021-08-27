@@ -13,6 +13,5 @@ export const types ={
     cardUpdate: '[Card] Update cards',
     cardDelete: '[Card] Delete cards',
     cardClear: '[Card] Clear cards',
+    cardLogoutClean:'[Card] Logout Card'
 }
-
-//acciones que se realizaran en la aplicación

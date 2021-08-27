@@ -1,8 +1,8 @@
 export const fileUpload = async(file) => {
 
-    const cluodUrl = 'https://api.cloudinary.com/v1_1/db9wh5uvt/image/upload'
+    const cluodUrl = 'https://api.cloudinary.com/v1_1/dntdy7q4t/image/upload'
     const fromData = new FormData();
-    fromData.append('upload_preset', 'react-app');
+    fromData.append('upload_preset', 'sprint3-app');
     fromData.append('file', file);
 
     try {

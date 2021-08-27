@@ -1,10 +1,10 @@
 import React from 'react'
-import CardsTaks from './CardsTaks';
-import CardSelect from './CardSelect';
-import AddTaks from './AddTaks';
-import '../../styles/Login.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { startLogout } from '../../actions/auth';
+import CardsTaks from './CardsTaks'
+import CardSelect from './CardSelect'
+import AddTaks from './AddTaks'
+import '../../styles/Login.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { startLogout } from '../../actions/auth'
 
 const AppTaks = () => {
 
@@ -21,10 +21,10 @@ const AppTaks = () => {
                 </span>
                 <nav className="my-2 my-md-0 mr-md-3 d-flex   ">
                     <a className="p-2 text-white " href="/">
-                        Inicio
+                        Home
                     </a>
                     <a className="p-2 text-white" href="/">
-                        Nosotros
+                        Movies
                     </a>
                     <p className="p-2 text-white"
                         onClick={() => dispatch(startLogout())}

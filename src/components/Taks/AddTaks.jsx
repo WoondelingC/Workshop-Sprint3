@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { CardNew, startUploading ,clearCard, Edit} from '../../actions/cardAction';
+import { CardNew, startUploading ,clearCard, Edit} from '../../actions/CardAction';
 import { useForm } from '../../hooks/useForm'
 
 const AddTaks = () => {
@@ -16,7 +16,7 @@ const AddTaks = () => {
       reset(active)
     }
     activeId.current = active
-  }, [active])
+  }, [])
 
   const { title, responsible, description, priority } = formValue
 
@@ -31,7 +31,7 @@ const AddTaks = () => {
   const handlNewCard = (e) => {
     e.preventDefault();
 
-    if (active.title === "") {
+    if (active === "") {
       dispatch(CardNew(formValue))
       reset()
     } else if(active !== ""){

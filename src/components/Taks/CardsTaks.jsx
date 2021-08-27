@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { activeCard, Delete } from '../../actions/cardAction'
+import { activeCard, Delete } from '../../actions/CardAction'
 
 const CardsTaks = ({card}) => {
 

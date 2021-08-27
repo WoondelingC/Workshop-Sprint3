@@ -16,7 +16,7 @@ import {PrivateRouter} from './PrivateRouter'
 import {PublicRouter} from './PublicRouter'
 import { login } from '../actions/auth';
 import Loading from '../components/Loading';
-import { ListarCard } from '../actions/cardAction';
+import { ListarCard } from '../actions/CardAction';
 
 const AppRouter = () => {
     const [checking, setChecking] = useState(true)
