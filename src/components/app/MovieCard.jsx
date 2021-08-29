@@ -1,3 +1,5 @@
+import axios from "axios";
+import { Fragment } from "react";
 import styled from "styled-components";
 
 const Card = styled.li`
@@ -18,12 +20,28 @@ const Title = styled.div`
 
 
 export const MovieCard = ({movie}) =>{
-    const imagen = "https://image.tmdb.org/t/p/w300" + movie.poster_path;
+    /*const [movies, setMovies]= useState();
+
+    const obtenerDatos = async (count) => {
+        const url = `https://sprint3-movies.herokuapp.com/movies`;
+        const resp = await axios.get(url);
+        const data = await resp.data;
+        setMovies(data);
+        return data;
+    }*/
 
     return (
         <Card>
-            <Imag src={imagen} alt="" />
-            <Title>{movie.title}</Title>
+            {movies.map ((movie)=>{
+                return (
+                    <Fragment>
+                        <Imag src={movie.imageUrl} alt="" />
+                        <Title>{movie.title}</Title>
+                    </Fragment>
+                )
+
+            })}
+            
         </Card>
         )
 }

@@ -9,7 +9,7 @@ const CardSelect = () => {
             <p>
                 No existen elementos agregados
                 <br />
-                Crea una tarjeta!
+                Agrega una Pelicula
             </p>
         </div>
     )

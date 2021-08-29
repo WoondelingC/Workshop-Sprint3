@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import {startLoginEmailPassword, startGoogleLogin} from '../../actions/auth'
+import {startLoginEmailPassword, startGoogleLogin, startFacebookLogin} from '../../actions/auth'
 import {useForm} from '../../hooks/useForm'
 import { Link } from 'react-router-dom'
 
@@ -26,6 +26,11 @@ const Login = () => {
     const handleGoogleLogin = () => {
         console.log('Google');
         dispatch(startGoogleLogin())
+    }
+
+    const handleFacebookLogin = () => {
+        console.log('Facebook');
+        dispatch(startFacebookLogin())
     }
     
     return (
@@ -88,6 +93,7 @@ const Login = () => {
                 </div>
                 <div
                     className="google-btn btn-primary"
+                        onClick={handleFacebookLogin}
                 >
                     <div className="google-icon-wrapper" >
                         <img className="google-icon"

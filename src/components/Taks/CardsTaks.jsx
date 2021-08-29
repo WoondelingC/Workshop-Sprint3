@@ -44,7 +44,7 @@ const CardsTaks = ({card}) => {
     
                             <button
                                 className="btn btn-warning"
-                                onClick={()=>handleEdit(data)}
+                                onClick={()=> handleEdit(data)}
                             >
                                 Edit
                             </button>

@@ -1,6 +1,6 @@
 import { db } from '../firebase/firebase-config'
 
-export const loadCards = async (uid) => {
+export const loadCard = async (uid) => {
 
     const cardStore = await db.collection(`${uid}/Card/data`).get()
     const cardsList = [];

@@ -3,26 +3,24 @@ import Swal from 'sweetalert2'
 import { fileUpload } from '../helpers/fileUpload'
 import { db } from '../firebase/firebase-config'
 import {types} from '../types/types'
-import { loadCards } from '../helpers/loadCards '
+import { loadCard } from '../helpers/loadCards '
 
 
-let fileUrl=[]
+let fileUrl=[];
 
 export const CardNew = (card) => {
     return async (dispatch, getSate) => {
         const uid = getSate().auth.uid
-       
+
         const newCard = {
             title: card.title,
             responsible: card.responsible,
             description: card.description,
             priority: card.priority,
             url: fileUrl
-            
         }
         const docRef = await db.collection(`${uid}/Card/data`).add(newCard)
-        dispatch(addNewCard(docRef.id, newCard))
-
+        dispatch(addNewCard(docRef.id,newCard))
     }
 }
 
@@ -46,7 +44,7 @@ export const Edit = (card) => {
         delete cardFire.id
 
         Swal.fire({
-            title: 'Uploading...',
+            title: 'Cargando...',
             text: 'Please wait ...',
             allowOutsideClick: false,
             onBeforeOpen: () => {
@@ -91,7 +89,7 @@ export const startUploading = (file) => {
     return async (dispatch) => {
 
         Swal.fire({
-            title: 'Uploading...',
+            title: 'Cargando...',
             text: 'Please wait ...',
             allowOutsideClick: false,
             onBeforeOpen: () => {
@@ -102,7 +100,7 @@ export const startUploading = (file) => {
         fileUrl = await fileUpload(file)
         console.log(fileUrl)
         Swal.close()
-       return fileUrl
+    return fileUrl
     }
 }
 
@@ -117,7 +115,7 @@ export const addNewCard = ( id, card ) => ({
 
 export const ListarCard = (uid) => {
     return async (dispatch) =>{
-        const cards =  await loadCards(uid)
+        const cards =  await loadCard(uid)
         dispatch(setCards(cards))
     }
 }

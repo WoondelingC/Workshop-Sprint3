@@ -4,22 +4,40 @@ import { CardNew, startUploading ,clearCard, Edit} from '../../actions/CardActio
 import { useForm } from '../../hooks/useForm'
 
 const AddTaks = () => {
+  const {active} = useSelector(state => state.card)
   const dispatch = useDispatch()
   let file = "";
-  const { active } = useSelector(state => state.card)
-  const [formValue, handleInputChange, reset] = useForm(active)
   
-  const activeId = useRef(active)
-
-  useEffect(() => {
-    if (active !== activeId.current) {
-      reset(active)
-    }
-    activeId.current = active
-  }, [])
+  const [formValue, handleInputChange, reset] = useForm(active)
 
   const { title, responsible, description, priority } = formValue
 
+  const activeId =useRef(active.id)
+
+  useEffect(() =>{
+    if (active.id !== activeId.current){
+      reset(active)
+    }
+    activeId.current = active.id
+  }, [active])
+
+const handlNewCard = (e) => {
+    e.preventDefault();
+    
+    if(active.title===""){
+      dispatch(CardNew(formValue))
+      reset()
+    }else if(active.id !== ""){
+      dispatch(Edit(formValue))
+    }
+    
+    dispatch(clearCard())
+  }
+  
+  const handlePictureClick = () => {
+    document.querySelector('#fileSelector').click();
+  }
+  
   const handleFileChange = (e) => {
     file = e.target.files[0];
     console.log(file)
@@ -28,25 +46,14 @@ const AddTaks = () => {
     }
   }
 
-  const handlNewCard = (e) => {
-    e.preventDefault();
+  
 
-    if (active === "") {
-      dispatch(CardNew(formValue))
-      reset()
-    } else if(active !== ""){
-      dispatch(Edit(formValue))
-    }
-    dispatch(clearCard())
-  }
-
-  const handlePictureClick = () => {
-    document.querySelector('#fileSelector').click();
-  }
+  
+  console.log (handleInputChange.title);
 
   return (
     <div className="card container text-center">
-      <h2>Agregar nueva tarea</h2>
+      <h2>Agregar Pelicula</h2>
       <form className="card-body " onSubmit={handlNewCard}>
         <div className="form-group">
           <input
