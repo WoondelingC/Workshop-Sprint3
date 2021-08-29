@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { App } from './container/App';
 import TaksApp from './container/TaksApp';
 
 
@@ -8,7 +9,7 @@ import TaksApp from './container/TaksApp';
 
 ReactDOM.render(
   
-    <TaksApp />,
+    <App />,
   document.getElementById('root')
 );
 

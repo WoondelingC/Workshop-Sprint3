@@ -1,6 +1,8 @@
 import axios from "axios";
-import { Fragment } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
+
 
 const Card = styled.li`
     border-radius: 10px;
@@ -19,29 +21,36 @@ const Title = styled.div`
 `
 
 
-export const MovieCard = ({movie}) =>{
-    /*const [movies, setMovies]= useState();
+export const MovieCard = () =>{
+    const [movies, setMovies]= useState([]);
+    console.log(movies);
+    useEffect(() => {
+        obtenerDatos();
+      },[]);
 
-    const obtenerDatos = async (count) => {
+    const obtenerDatos = async () => {
         const url = `https://sprint3-movies.herokuapp.com/movies`;
         const resp = await axios.get(url);
         const data = await resp.data;
-        setMovies(data);
+        setMovies(data);console.log(data);
         return data;
-    }*/
+        
+    }
 
     return (
-        <Card>
-            {movies.map ((movie)=>{
-                return (
-                    <Fragment>
-                        <Imag src={movie.imageUrl} alt="" />
-                        <Title>{movie.title}</Title>
-                    </Fragment>
+        <>
+            {movies.map(()=>{
+                return(
+                 <>
+                 <Card>
+                    <Imag src={movies.image} alt="" />
+                    <Title>{movies.title}</Title>
+                    </Card>
+                 </>
                 )
-
+                    
             })}
-            
-        </Card>
+    </>
+        
         )
 }

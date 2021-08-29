@@ -24,12 +24,7 @@ export const Movies = () => {
   return (
     <div>
         <Content>
-      {movies.map((movie) => {
-          return (
-          <MovieCard key={movie.id} movie={movie} />)
-      }
-        
-      )}
+          <MovieCard key={movies.id} />
       </Content>
     </div>
   );

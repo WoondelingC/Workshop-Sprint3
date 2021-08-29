@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Movies } from './components/App/Movies';
+import { Movies } from '../components/app/Movies';
 
 
 export const App = () => {
