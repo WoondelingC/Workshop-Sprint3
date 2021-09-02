@@ -37,7 +37,7 @@ const CardsTaks = ({card}) => {
     
                             <p>{data.description}</p>
                             <p>
-                                <mark>{data.responsible}</mark>
+                                <mark>{data.ble}</mark>
                             </p>
                         </div>
                         <div className="card-footer text-center" >

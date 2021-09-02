@@ -1,4 +1,3 @@
-import movies from "../../data.json";
 import { MovieCard } from "./MovieCard";
 import styled from "styled-components";
 
@@ -24,8 +23,8 @@ export const Movies = () => {
   return (
     <div>
         <Content>
-          <MovieCard key={movies.id} />
-      </Content>
+          <MovieCard />
+        </Content>
     </div>
   );
 };

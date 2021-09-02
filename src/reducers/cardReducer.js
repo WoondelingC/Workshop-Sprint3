@@ -4,7 +4,7 @@ const initialState = {
     card:[],
     active: {
         title:'',
-        responsible:'',
+        categoria:'',
         description:'',
         priority:'',
         url:''
@@ -38,7 +38,7 @@ export const cardReducer = (state= initialState, action) =>{
                     ...state,
                     active:{
                         title:"",
-                        responsible:"",
+                        categoria:"",
                         description:"",
                         priority: ""
                     }

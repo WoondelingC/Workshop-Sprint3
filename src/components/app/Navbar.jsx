@@ -1,42 +1,69 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { startLogout } from "../../actions/auth";
+import styled from "styled-components";
+import logo from "../../asset/logo.png";
 
-export const Navbar = ()=>{
+const gridUl = {
+  display: "flex",
+  listStyle: "none",
+  color: "#fff",
+  paddingTop: "3.5vh",
+};
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+const textDecoration = { textDecoration: "none", listStyle: "none" };
+const hInputNav = { height: "44px" };
+
+/* Navbar  */
+const Nav = styled.div`
+  height: 112px;
+  background-color: #0c0e16;
+`;
+
+export const Navbar = ({ searchMovie }) => {
+  const dispatch = useDispatch();
+  const { name } = useSelector((state) => state.auth);
+
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    console.log("buscando");
+  }
+
+  return (
+    <Nav>
+      <ul style={gridUl}>
+        <Link to="/inicio">
+          <img src={logo} alt="logo" />
+        </Link>
+        <Link to="/movie" style={textDecoration}>
+          <li>Todas</li>
+        </Link>
+        <Link to="/movie" style={textDecoration}>
+          <li>Mas valoradas</li>
+        </Link>
+        <Link to="/" style={textDecoration}>
+          <li>Agregar</li>
+        </Link>
+        <li className="text-white" onClick={() => dispatch(startLogout())}>
+          logout
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/">Action</a></li>
-            <li><a class="dropdown-item" href="/">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="/">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="/" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
+        <li className="text-white d-flex">{name}</li>
+
+        <form className="d-flex" onSubmit={handleSubmit}>
+          <input
+            className="form-control me-2"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+            onChange={e=> console.log(e.target.value)}
+
+          />
+          <button className="btn btn-outline-success" type="submit">
+            Search
+          </button>
+        </form>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-
-}
+    </Nav>
+  );
+};

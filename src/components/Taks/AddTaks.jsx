@@ -10,7 +10,7 @@ const AddTaks = () => {
   
   const [formValue, handleInputChange, reset] = useForm(active)
 
-  const { title, responsible, description, priority } = formValue
+  const { title, categoria, description, priority } = formValue
 
   const activeId =useRef(active.id)
 
@@ -69,10 +69,10 @@ const handlNewCard = (e) => {
         <div className="form-group">
           <input
             type="text"
-            name="responsible"
+            name="Categoria"
             className="form-control mt-1"
-            placeholder="Responsible"
-            value={responsible}
+            placeholder="Categoria"
+            value={categoria}
             onChange={handleInputChange}
           />
         </div>
@@ -90,14 +90,14 @@ const handlNewCard = (e) => {
 
         <div className="form-group">
           <select
-            name="priority"
+            name="tipo"
             className="form-control mt-1"
             value={priority}
             onChange={handleInputChange}
           >
-            <option>low</option>
-            <option>medium</option>
-            <option>high</option>
+            <option>Pelicula</option>
+            <option>Serie</option>
+            <option>documental</option>
           </select>
         </div>
 

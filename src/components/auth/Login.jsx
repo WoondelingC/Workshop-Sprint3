@@ -17,7 +17,7 @@ const Login = () => {
     //desestructurar 
     const { email, password } = values;
 
-    const hadleLogin = (e) => {
+    const handleLogin = (e) => {
         e.preventDefault();
         dispatch(startLoginEmailPassword(email,password))
     }
@@ -68,7 +68,7 @@ const Login = () => {
                 <button
                     type="submit"
                     className="btn btn-primary btn-block"
-                    onClick={hadleLogin}
+                    onClick={handleLogin}
                     disabled={loading}
                 >
                     Login

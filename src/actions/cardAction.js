@@ -14,7 +14,7 @@ export const CardNew = (card) => {
 
         const newCard = {
             title: card.title,
-            responsible: card.responsible,
+            categoria: card.categoria,
             description: card.description,
             priority: card.priority,
             url: fileUrl
@@ -34,7 +34,7 @@ export const Edit = (card) => {
 
         const EditCard = {
             title: card.title,
-            responsible: card.responsible,
+            categoria: card.categoria,
             description: card.description,
             priority: card.priority,
             url: fileUrl

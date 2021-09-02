@@ -1,0 +1,21 @@
+body{
+    background: black;
+}
+
+.ruta{
+    text-decoration: none;
+    
+}
+.cardMovie{
+    margin: 10px auto;
+    width: 30%;
+    background-color: brown;
+    color:white;
+    text-align: center;
+}
+.cardImg{
+    height: 50vh;
+}
+.boton:hover{
+    background-color: rgb(128, 245, 73);
+}
