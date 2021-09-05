@@ -64,7 +64,6 @@ export const Delete = (id) => {
     return async (dispatch, getState) => {
 
         const uid = getState().auth.uid;
-        const card = getState().auth.card;
 
         await db.doc(`${uid}/Card/data/${id}`).delete();
 

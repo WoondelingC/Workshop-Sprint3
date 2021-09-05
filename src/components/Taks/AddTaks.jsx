@@ -19,7 +19,7 @@ const AddTaks = () => {
       reset(active)
     }
     activeId.current = active.id
-  }, [active])
+  }, [active, reset])
 
 const handlNewCard = (e) => {
     e.preventDefault();
