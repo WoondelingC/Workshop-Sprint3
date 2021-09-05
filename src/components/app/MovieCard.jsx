@@ -44,7 +44,7 @@ export const MovieCard = () =>{
         <>
             {movies.map((movie)=>{
                 return(
-                 <Card>
+                 <Card key={movie.id}>
                      <Link to={`/movies/${movie.id}`} className="ruta">
                     <Imag src={movie.image} alt="" />
                     <Title>{movie.title}</Title>

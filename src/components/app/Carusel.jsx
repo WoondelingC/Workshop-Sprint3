@@ -25,24 +25,24 @@ const Carusel = () => {
     return (
         <Carousel>
   <Carousel.Item className="carusel" interval={3000}>
-  <iframe width="100%" height="480" src="https://www.youtube.com/embed/7UiFFLH0ETE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="100%" height="480" src="https://www.youtube.com/embed/7UiFFLH0ETE" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
     <Carousel.Caption>
     
-     <Button variant="warning" text-dark>  <Play /> VER AHORA</Button>  <Button variant="dark" text-warning> <Mas /> VER DESPUES</Button>
+     <Button variant="warning">  <Play /> VER AHORA</Button>  <Button variant="dark"> <Mas /> VER DESPUES</Button>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item className="carusel" interval={3000}>
-  <iframe width="100%" height="480" src="https://www.youtube.com/embed/v7F6oTFc7Eg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="100%" height="480" src="https://www.youtube.com/embed/v7F6oTFc7Eg" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
     <Carousel.Caption>
   
-    <Button variant="warning" text-dark>  <Play /> VER AHORA</Button>  <Button variant="dark" text-warning> <Mas /> VER DESPUES</Button>
+    <Button variant="warning">  <Play /> VER AHORA</Button>  <Button variant="dark"> <Mas /> VER DESPUES</Button>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item className="carusel" interval={3000}>
-  <iframe width="100%" height="480" src="https://www.youtube.com/embed/My9guChk6WU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="100%" height="480" src="https://www.youtube.com/embed/My9guChk6WU" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
     <Carousel.Caption>
      
-    <Button variant="warning" text-dark>  <Play /> VER AHORA</Button>  <Button variant="dark" text-warning> <Mas /> VER DESPUES </Button>
+    <Button variant="warning">  <Play /> VER AHORA</Button>  <Button variant="dark" > <Mas /> VER DESPUES </Button>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>

@@ -21,7 +21,7 @@ const MovieDetail = (props) => {
         
       obtenerDatos()
 
-      },[]);
+      },);
 
     const obtenerDatos = async () => {
         const url = `https://sprint3-movies.herokuapp.com/movies/${props.match.params.id}`
