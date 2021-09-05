@@ -3,7 +3,7 @@ import Carusel from "../components/app/Carusel";
 import { Movies } from "../components/app/Movies";
 import styled from "styled-components";
 import { Navbar } from "../components/app/Navbar";
-import {FaSearch as Lupa} from "react-icons/fa";
+
 
 
 const Titulo = styled.h1`
@@ -19,11 +19,9 @@ const Titulo = styled.h1`
   margin: 0;
 `;
 
+
 export const App = () => {
 
-  const buscar = (e) =>{
-    e.preventDefault();
-  }
   return(
 
     <div>

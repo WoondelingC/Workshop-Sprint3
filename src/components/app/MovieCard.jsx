@@ -22,7 +22,6 @@ const Title = styled.div`
     margin-bottom: 50px;
     color: white;
     text-decoration: none;
-
 `
 
 export const MovieCard = () =>{

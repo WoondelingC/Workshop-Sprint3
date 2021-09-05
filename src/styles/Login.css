@@ -77,3 +77,12 @@ height: 100vh;
 .nothing__main-content p {
 text-align: center;
 }
+
+.logo{
+    margin-bottom: 30px;
+    width: 50%;
+}
+.title{
+  color:white;
+  margin-bottom: 20px;
+}

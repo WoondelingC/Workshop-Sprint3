@@ -3,6 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import {startLoginEmailPassword, startGoogleLogin, startFacebookLogin} from '../../actions/auth'
 import {useForm} from '../../hooks/useForm'
 import { Link } from 'react-router-dom'
+import mLogin from '../../asset/login.jpg'
+import styled from 'styled-components';
+
+const Logo = styled.img`
+    border-radius: 50%;
+
+`
 
 const Login = () => {
 
@@ -35,9 +42,9 @@ const Login = () => {
     
     return (
         <div className="Registro py-5 container text-center">
-
+            <Logo src={mLogin} alt="" />
             <form className="form-signin">
-                <h1 className="h4 mb-3 font-weight-normal">
+                <h1 className="h4 mb-3 font-weight-normal text-white">
                     Inicio de sesión
                 </h1>
 
@@ -74,10 +81,10 @@ const Login = () => {
                     Login
                 </button>
 
-                <div className="">
+                <div className="text-white p-2">
                     <p>Login with social networks</p>
 
-                    <div className="google-btn btn-primary"  
+                    <div className="google-btn btn-danger"  
                          onClick={handleGoogleLogin}>
                         <div className="google-icon-wrapper"
                         
@@ -92,7 +99,7 @@ const Login = () => {
                     </div>
                 </div>
                 <div
-                    className="google-btn btn-primary"
+                    className="google-btn btn-warning"
                         onClick={handleFacebookLogin}
                 >
                     <div className="google-icon-wrapper" >
@@ -101,7 +108,7 @@ const Login = () => {
                             alt="google button" 
                             width="30px"/>
                     </div>
-                    <p className="btn-text">
+                    <p className="btn-text ">
                         <b>Sign in with Facebook</b>
                     </p>
                 </div>

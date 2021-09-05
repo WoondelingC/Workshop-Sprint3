@@ -10,14 +10,11 @@ const Content = styled.ul`
     text-align: center;
     font-weight: bold;
     justify-content: center;
-
     @media (max-width: 550px) {
         grid-template-columns: 100%;
     }
     
 `
-
-
 
 export const Movies = () => {
   return (

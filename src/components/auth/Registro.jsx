@@ -5,9 +5,11 @@ import validator from 'validator'
 import { setError, removeError} from '../../actions/uiError'
 import {startRegisterWithEmailPasswordName} from '../../actions/auth'
 import { useDispatch, useSelector } from 'react-redux'
+import logo from '../../asset/logo.png'
+    
 
 const Registro = () => {
-
+    
     const dispatch = useDispatch();
     const { msjError } = useSelector(state => state.ui);
 
@@ -59,18 +61,15 @@ const Registro = () => {
                         </div>
                     )
                 }
-                <h1 className="h3 mb-3 font-weight-normal">
-                    ¡Registrate en nuestro sistema!
-                </h1>
-                <label htmlFor="inputemailaddress" className="sr-only">
-                    Correo electrónico
-                </label>
+                <img className="logo" src={logo} alt="" />
+
+                <h1 className="title">Registrate</h1>
 
                 <input
                     type="text"
                     placeholder="Name"
                     name="nombre"
-                    className="form-control"
+                    className="form-control p-2 mb-2"
                     autoComplete="off"
                     value={nombre}
                     onChange={handleInputChange}
@@ -80,7 +79,7 @@ const Registro = () => {
                     type="email"
                     placeholder="Email"
                     name="email"
-                    className="form-control"
+                    className="form-control p-2 mb-2"
                     autoComplete="off"
                     required=""
                     value={email}
@@ -92,7 +91,7 @@ const Registro = () => {
                     type="Password"
                     name="password"
                     id="inputPassword"
-                    className="form-control"
+                    className="form-control p-2 mb-2"
                     placeholder="Password"
                     required=""
                     value={password}
@@ -103,7 +102,7 @@ const Registro = () => {
                     type="Password"
                     name="password2"
                     id="inputPassword2"
-                    className="form-control"
+                    className="form-control p-2 mb-3"
                     placeholder="Confirm password"
                     required=""
                     value={password2}

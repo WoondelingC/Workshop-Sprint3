@@ -1,12 +1,11 @@
 import { types } from '../types/types';
-import React from 'react';
 
 const initialState = {
-    heroe: [],
+    movie: [],
     search: []
 }
 
-export const heroesReducer = (state = initialState, action) => {
+export const moviesReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case types.Listar:

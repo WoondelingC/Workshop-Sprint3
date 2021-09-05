@@ -13,9 +13,8 @@ import { PublicRouter } from "./PublicRouter";
 import { login } from "../actions/auth";
 import Loading from "../components/Loading";
 import { ListarCard } from "../actions/CardAction";
-import { App } from "../container/App";
 import MovieDetail from "../components/app/MovieDetail";
-import { Movies } from "../components/app/Movies";
+import { App } from "../container/App";
 
 const AppRouter = () => {
   const [checking, setChecking] = useState(true);
@@ -52,14 +51,14 @@ const AppRouter = () => {
 
           <PrivateRouter
             exact
-            path="/"
+            path="/agregar"
             component={AppTaks}
             isAuthenticated={isLooggedIn}
           />
 
           <PrivateRouter
             exact
-            path="/movie"
+            path="/"
             component={App}
             isAuthenticated={isLooggedIn}
           />
@@ -68,13 +67,6 @@ const AppRouter = () => {
             exact
             path="/movies/:id"
             component={MovieDetail}
-            isAuthenticated={isLooggedIn}
-          />
-
-          <PrivateRouter
-            exact
-            path="/movies"
-            component={Movies}
             isAuthenticated={isLooggedIn}
           />
 

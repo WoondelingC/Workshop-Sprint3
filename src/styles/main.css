@@ -19,3 +19,11 @@ body{
 .boton:hover{
     background-color: rgb(128, 245, 73);
 }
+.buscador{
+    height: 40px;
+    margin-right: 4%;
+}
+.log{
+    border-radius: 150px;
+    padding: 10px
+}
