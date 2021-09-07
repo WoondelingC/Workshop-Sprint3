@@ -26,7 +26,7 @@ const CardsTaks = ({card}) => {
                     <div className="card mt-2 container text-center">
                         <div className="card-title text-center container">
                             <h3>{data.title}</h3>
-                            <img className="text-center container" src={data.url} alt="" width="60px" height="80px" />
+                            <img className="text-center container" src={data.url} alt="" width="200px" height="200px" />
                             <span className="badge badge-pill bg-danger ml-2">
                                 {data.priority}
                             </span>
@@ -43,7 +43,7 @@ const CardsTaks = ({card}) => {
                         <div className="card-footer text-center" >
     
                             <button
-                                className="btn btn-warning"
+                                className="btn btn-warning me-2"
                                 onClick={()=> handleEdit(data)}
                             >
                                 Edit

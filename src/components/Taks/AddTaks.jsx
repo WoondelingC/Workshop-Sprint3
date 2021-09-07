@@ -118,7 +118,7 @@ const handlNewCard = (e) => {
         </div>
 
         <button type="submit" className="btn btn-primary mt-2">
-          Save
+          Guardar
         </button>
       </form>
     </div>

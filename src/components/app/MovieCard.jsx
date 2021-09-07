@@ -1,6 +1,3 @@
-import axios from "axios";
-import { useEffect } from "react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import '../../styles/main.css';
@@ -24,36 +21,15 @@ const Title = styled.div`
     text-decoration: none;
 `
 
-export const MovieCard = () =>{
-    const [movies, setMovies]= useState([]);
+export const MovieCard = ({movie}) =>{
     
-    useEffect(() => {
-        obtenerDatos();
-      },[]);
 
-    const obtenerDatos = async () => {
-        const url = `https://sprint3-movies.herokuapp.com/movies`;
-        const resp = await axios.get(url);
-        const data = await resp.data;
-        setMovies(data);
-        return data;
-        
-    }
-
-    return (
-        <>
-            {movies.map((movie)=>{
-                return(
-                 <Card key={movie.id}>
-                     <Link to={`/movies/${movie.id}`} className="ruta">
+    return (    
+            <Card>
+                <Link to={`/movies/${movie.id}`} className="ruta">
                     <Imag src={movie.image} alt="" />
                     <Title>{movie.title}</Title>
-                    </Link>
-                    </Card>
-                )
-                    
-            })}
-    </>
-        
-        )
+                </Link>
+            </Card>
+    )                 
 }

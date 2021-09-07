@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { startLogout } from "../../actions/auth";
 import styled from "styled-components";
 import logo from "../../asset/logo.png";
-import { useState } from "react";
+
 
 const Ul = styled.ul`
     display: flex;
@@ -22,16 +22,17 @@ const Nav = styled.div`
   background-color: #0c0e16;
 `
 
-export const Navbar = () => {
+export const Navbar = ({ searchValue, setSearchValue }) => {
   const dispatch = useDispatch();
   const { name } = useSelector((state) => state.auth);
-
-  const [searchValue, setSearchValue] = useState('')
 
   const search = (e)=>{
     console.log(e.target.value);
     setSearchValue(e.target.value);
 }
+  const buscar = (e) => {
+    e.preventDefault();
+  } 
 
 
   return (
@@ -55,7 +56,7 @@ export const Navbar = () => {
         </Link>
         <li className="text-danger d-flex">{name}</li>
 
-        <form className="d-flex buscador" >
+        <form className="d-flex buscador" onSubmit={buscar} >
           <input
             className="form-control me-2"
             type="text"

@@ -3,9 +3,13 @@ import CardsTaks from './CardsTaks'
 import CardSelect from './CardSelect'
 import AddTaks from './AddTaks'
 import '../../styles/Login.css'
-import { useSelector } from 'react-redux'
-
+import { useSelector } from 'react-redux';
+import styled from "styled-components";
 import { Navbar } from '../app/Navbar'
+
+const Main = styled.main`
+    width: 140%;
+`
 
 const AppTaks = () => {
     const { card } = useSelector(state => state.card)
@@ -23,7 +27,7 @@ const AppTaks = () => {
                     </div>
 
                     <div className="col-md-8">
-                        <div className="row">
+                        <Main className="row">
                             <main>
                                 {
                                     (card.length !== 0)
@@ -31,7 +35,7 @@ const AppTaks = () => {
                                         : <CardSelect />
                                 }
                             </main>
-                        </div>
+                        </Main>
                     </div>
                 </div>
             </div>
